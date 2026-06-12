@@ -1,6 +1,6 @@
 ﻿namespace WishList.Domain.Entities
 {
-    public class WishList
+    public class UserWishList
     {
         public Guid Id { get; private set; }
 
@@ -12,9 +12,9 @@
 
         public DateTime CreatedAtUtc { get; private set; }
 
-        private WishList() { }
+        private UserWishList() { }
 
-        public WishList(
+        public UserWishList(
             Guid userId, string name
         )
         {
