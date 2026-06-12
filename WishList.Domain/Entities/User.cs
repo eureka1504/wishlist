@@ -8,7 +8,7 @@
 
         public string PasswordHash { get; private set; } = string.Empty;
 
-        public ICollection<WishList> WishLists { get; private set; } = new List<WishList>();
+        public ICollection<UserWishList> WishLists { get; private set; } = new List<UserWishList>();
 
         public ICollection<Budget> Budgets { get; private set; } = new List<Budget>();
 
@@ -27,7 +27,7 @@
             CreatedAtUtc = DateTime.UtcNow;
         }
 
-        public void AddWishList(WishList wishList)
+        public void AddWishList(UserWishList wishList)
         {
             WishLists.Add(wishList);
         }
