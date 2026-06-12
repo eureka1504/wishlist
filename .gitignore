@@ -1,0 +1,26 @@
+# Build output
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+
+# Rider / VS Code
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Publish
+publish/
+
+# Secrets
+appsettings.*.json
+
+# EF Core
+Migrations/
+
+# OS files
+.DS_Store
