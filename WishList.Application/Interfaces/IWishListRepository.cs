@@ -7,7 +7,5 @@ namespace WishList.Application.Interfaces
         Task<UserWishList?> GetByIdAsync(Guid id);
         Task<IReadOnlyList<UserWishList>> GetByUserIdAsync(Guid userId);
         Task AddAsync(UserWishList wishList);
-        Task RemoveAsync(UserWishList wishList);
-        Task SaveChangesAsync();
     }
 }

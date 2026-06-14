@@ -6,6 +6,8 @@
 
         public Guid WishListId { get; private set; }
 
+        public UserWishList WishList { get; private set; } = null!;
+
         public string ProductId { get; private set; } = string.Empty;
 
         public string ProductName { get; private set; } = string.Empty;

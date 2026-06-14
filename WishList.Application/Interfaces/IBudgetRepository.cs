@@ -7,6 +7,5 @@ namespace WishList.Application.Interfaces
         Task<Budget?> GetByIdAsync(Guid id);
         Task<IReadOnlyList<Budget>> GetByUserIdAsync(Guid userId);
         Task AddAsync(Budget budget);
-        Task SaveChangesAsync();
     }
 }

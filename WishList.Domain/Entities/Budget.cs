@@ -8,6 +8,8 @@ namespace WishList.Domain.Entities
 
         public Guid UserId { get; private set; }
 
+        public User User { get; private set; } = null!;
+
         public string Name { get; private set; } = string.Empty;
 
         public decimal Amount { get; private set; }
