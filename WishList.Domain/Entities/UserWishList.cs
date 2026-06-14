@@ -6,6 +6,8 @@
 
         public Guid UserId { get; private set; }
 
+        public User User { get; private set; } = null!;
+
         public string Name { get; private set; } = string.Empty;
 
         public ICollection<WishListItem> Items { get; private set; } = new List<WishListItem>();
