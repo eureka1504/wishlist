@@ -11,6 +11,9 @@ namespace WishList.Application.DependencyInjection
             services.AddScoped<IGetWishListByIdService, GetWishListByIdService>();
             services.AddScoped<IGetWishListsByUserIdService, GetWishListsByUserIdService>();
             services.AddScoped<ICreateWishListService, CreateWishListService>();
+            services.AddScoped<IGetBudgetByIdService, GetBudgetByIdService>();
+            services.AddScoped<IGetBudgetByUserIdService, GetBudgetByUserIdService>();
+            services.AddScoped<ICreateBudgetService, CreateBudgetService>();
 
             return services;
         }
