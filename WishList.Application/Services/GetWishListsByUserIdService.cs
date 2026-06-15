@@ -1,5 +1,5 @@
-﻿using WishList.Application.Interfaces;
-using WishList.Domain.Entities;
+﻿using WishList.Application.DTOs;
+using WishList.Application.Interfaces;
 
 namespace WishList.Application.Services
 {
@@ -12,7 +12,7 @@ namespace WishList.Application.Services
             _wishListRepo = wishListRepo;
         }
 
-        public async Task<IReadOnlyList<UserWishList>> GetByUserIdAsync(Guid userId)
+        public async Task<IReadOnlyList<WishListResponse>> GetByUserIdAsync(Guid userId)
         {
             return await _wishListRepo.GetByUserIdAsync(userId);
         }
