@@ -1,12 +1,9 @@
 ﻿using WishList.Application.DTOs;
-using WishList.Domain.Entities;
 
 namespace WishList.Application.Interfaces
 {
-    public interface IBudgetRepository
+    public interface IGetBudgetByUserIdService
     {
-        Task<BudgetResponse?> GetByIdAsync(Guid id);
         Task<IReadOnlyList<BudgetResponse>> GetByUserIdAsync(Guid userId);
-        Task AddAsync(Budget budget);
     }
 }
