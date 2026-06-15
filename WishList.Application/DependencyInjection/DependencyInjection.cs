@@ -9,7 +9,7 @@ namespace WishList.Application.DependencyInjection
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddScoped<IGetWishListByIdService, GetWishListByIdService>();
-            services.AddScoped<IGetUserWishListsService, GetUserWishListsService>();
+            services.AddScoped<IGetWishListsByUserIdService, GetWishListsByUserIdService>();
             services.AddScoped<ICreateWishListService, CreateWishListService>();
 
             return services;

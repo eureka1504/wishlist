@@ -9,12 +9,12 @@ namespace WishList.Api.Controllers
     public class WishListController : ControllerBase
     {
         private readonly IGetWishListByIdService _getWishListByIdService;
-        private readonly IGetUserWishListsService _getUserWishListService;
+        private readonly IGetWishListsByUserIdService _getUserWishListService;
         private readonly ICreateWishListService _createWishListService;
 
         public WishListController(
             IGetWishListByIdService getWishListByIdService,
-            IGetUserWishListsService getUserWishListsService,
+            IGetWishListsByUserIdService getUserWishListsService,
             ICreateWishListService createWishListService
         )
         {
@@ -34,7 +34,7 @@ namespace WishList.Api.Controllers
         [HttpGet("user/{userId}")]
         public async Task<IActionResult> GetByUserId(Guid userId)
         {
-            var wishLists = await _getUserWishListService.GetAsync(userId);
+            var wishLists = await _getUserWishListService.GetByUserIdAsync(userId);
 
             return Ok(wishLists);
         }
