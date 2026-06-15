@@ -26,7 +26,7 @@ namespace WishList.Api.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
-            var budget = await _getBudgetByIdService.GetBudgetByIdAsync(id);
+            var budget = await _getBudgetByIdService.GetByIdAsync(id);
 
             return Ok(budget);
         }

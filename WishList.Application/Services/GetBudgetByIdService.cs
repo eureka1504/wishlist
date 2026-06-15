@@ -12,7 +12,7 @@ namespace WishList.Application.Services
             _budgetRepo = budgetRepo;
         }
 
-        public async Task<BudgetResponse?> GetBudgetByIdAsync(Guid id)
+        public async Task<BudgetResponse?> GetByIdAsync(Guid id)
         {
             return await _budgetRepo.GetByIdAsync(id);
         }
