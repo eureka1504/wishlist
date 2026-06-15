@@ -1,9 +1,9 @@
-﻿using WishList.Domain.Entities;
+﻿using WishList.Application.DTOs;
 
 namespace WishList.Application.Interfaces
 {
     public interface IGetWishListsByUserIdService
     {
-        Task<IReadOnlyList<UserWishList>> GetByUserIdAsync(Guid userId);
+        Task<IReadOnlyList<WishListResponse>> GetByUserIdAsync(Guid userId);
     }
 }

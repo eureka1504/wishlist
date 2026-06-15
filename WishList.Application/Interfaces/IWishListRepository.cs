@@ -1,11 +1,12 @@
-﻿using WishList.Domain.Entities;
+﻿using WishList.Application.DTOs;
+using WishList.Domain.Entities;
 
 namespace WishList.Application.Interfaces
 {
     public interface IWishListRepository
     {
-        Task<UserWishList?> GetByIdAsync(Guid id);
-        Task<IReadOnlyList<UserWishList>> GetByUserIdAsync(Guid userId);
+        Task<WishListResponse?> GetByIdAsync(Guid id);
+        Task<IReadOnlyList<WishListResponse>> GetByUserIdAsync(Guid userId);
         Task AddAsync(UserWishList wishList);
     }
 }
