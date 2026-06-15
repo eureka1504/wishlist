@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WishList.Api.Models.WishLists;
+using WishList.Application.Interfaces;
 
 namespace WishList.Api.Controllers
 {
@@ -6,10 +8,43 @@ namespace WishList.Api.Controllers
     [Route("api/[controller]")]
     public class WishListController : ControllerBase
     {
-        [HttpGet("ping")]
-        public IActionResult Ping()
+        private readonly IGetWishListByIdService _getWishListByIdService;
+        private readonly IGetWishListsByUserIdService _getUserWishListService;
+        private readonly ICreateWishListService _createWishListService;
+
+        public WishListController(
+            IGetWishListByIdService getWishListByIdService,
+            IGetWishListsByUserIdService getUserWishListsService,
+            ICreateWishListService createWishListService
+        )
         {
-            return Ok("WISH LIST CONTROLLER RESPONSE");
+            _getWishListByIdService = getWishListByIdService;
+            _getUserWishListService = getUserWishListsService;
+            _createWishListService = createWishListService;
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(Guid id)
+        {
+            var wishList = await _getWishListByIdService.GetByIdAsync(id);
+
+            return Ok(wishList);
+        }
+
+        [HttpGet("user/{userId}")]
+        public async Task<IActionResult> GetByUserId(Guid userId)
+        {
+            var wishLists = await _getUserWishListService.GetByUserIdAsync(userId);
+
+            return Ok(wishLists);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody]CreateWishListRequest request)
+        {
+            var wishListId = await _createWishListService.CreateAsync(request.UserId, request.Name);
+
+            return Ok(wishListId);
         }
     }
 }
